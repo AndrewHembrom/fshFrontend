@@ -12,6 +12,7 @@ import Verify from "./pages/auth/Verify";
 import Account from "./pages/Account/Account";
 import Dashbord from "./pages/dashboard/Dashboard";
 import AdminCourses from "./admin/Courses/AdminCourses";
+import EventDescription from "./pages/eventdescription/EventDescription";
 import AdminDashbord from "./admin/Dashboard/AdminDashboard";
 import Loading from "./components/Loading/Loading";
 
@@ -47,6 +48,10 @@ function App() {
             <Route
               path="/admin/dashboard"
               element={isAuth ? <AdminDashbord user={user} /> : <Login />}
+            />
+            <Route
+              path="/event/registered/:id"
+              element={isAuth ? <EventDescription user={user} /> : <Login />}
             />
           </Routes>
         </div>

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const EventCard = ({ event }) => {
   const navigate = useNavigate();
   const { user, isAuth } = UserData();
-  
+
   return (
     <div className="bg-gray-500 shadow-md rounded-md p-4 transition-transform transform hover:scale-105 hover:border-2 hover:border-slate-400 w-[70%]">
       <img
@@ -33,7 +33,7 @@ const EventCard = ({ event }) => {
                 <button
                   onClick={() => {
                     // navigate(`/event/${event._id}`);
-                    navigate(`/login`);
+                    navigate(`/event/registered/${event._id}`);
                   }}
                   className="common-btn"
                 >
@@ -70,7 +70,7 @@ const EventCard = ({ event }) => {
           Delete
         </button>
       )} */}
-{/* // =======
+      {/* // =======
 //       <h3 className="text-center text-xl font-semibold mb-2">{event.title}</h3>
 //       <p className="text-center text-gray-200 mb-4">Price - ₹{event.price}</p>
 //       <p className="text-center ">

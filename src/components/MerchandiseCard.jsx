@@ -33,7 +33,7 @@ const MerchandiseCard = ({ merch }) => {
                 <button
                   onClick={() => {
                     // navigate(`/merch/${merch._id}`);
-                    navigate(`/login`);
+                    navigate(`/merch/registered/${merch._id}`);
                   }}
                   className="common-btn"
                 >
