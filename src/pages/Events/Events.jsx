@@ -10,11 +10,9 @@ const Events = () => {
 
       <div className="events-container">
         {events && events.length > 0 ? (
-          events.map((e) => {
-            <EventCard key={e._id} course={e} />;
-          })
+          events.map((e) => <EventCard key={e._id} event={e} />)
         ) : (
-          <p>No Events Yet</p>
+          <p>NO Events Yet</p>
         )}
       </div>
     </div>

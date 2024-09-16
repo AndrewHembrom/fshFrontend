@@ -3,26 +3,31 @@ import { server } from "../main";
 import { UserData } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
-const EventCard = () => {
+const EventCard = ({ event }) => {
+  console.log(event);
   const navigate = useNavigate();
   const { user, isAuth } = UserData();
   return (
-    <div className="event-card">
-      <img src={`${server}/${events.image}`} alt="" className="event-image" />
-      <h3>{events.title}</h3>
-      <p>{events.description}</p>
-      <p>Venue - {events.venue}</p>
-      <p>Time - {events.time} weeks</p>
-      <p>Members - {events.members}</p>
-      <p>Price - ₹{events.price}</p>
+    <div className="bg-slate-500 shadow-md rounded-md transition w-[250px]">
+      <img
+        src={`${server}/${event.image}`}
+        alt=""
+        className="w-[100px] h-[100px] object-cover rounded-md mb-[10px]"
+      />
+      <h3>{event.title}</h3>
+      <p>{event.description}</p>
+      <p>Venue - {event.venue}</p>
+      <p>Time - {event.time}</p>
+      <p>Members - {event.members}</p>
+      <p>Price - ₹{event.price}</p>
       {isAuth ? (
         <>
           {user && user.role !== "admin" ? (
             <>
-              {user.subscription.includes(events._id) ? (
+              {user.subscription.includes(event._id) ? (
                 <button
                   onClick={() => {
-                    navigate(`/events/registered/${events._id}`);
+                    navigate(`/event/registered/${event._id}`);
                   }}
                   className="common-btn"
                 >
@@ -31,7 +36,7 @@ const EventCard = () => {
               ) : (
                 <button
                   onClick={() => {
-                    navigate(`/events/${events._id}`);
+                    navigate(`/event/${event._id}`);
                   }}
                   className="common-btn"
                 >
@@ -42,7 +47,7 @@ const EventCard = () => {
           ) : (
             <button
               onClick={() => {
-                navigate(`/events/registered/${events._id}`);
+                navigate(`/event/registered/${event._id}`);
               }}
               className="common-btn"
             >

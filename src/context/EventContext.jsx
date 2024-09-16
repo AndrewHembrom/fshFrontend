@@ -10,8 +10,7 @@ export const EventContextProvider = ({ children }) => {
 
   async function fetchEvents() {
     try {
-      const { data } = await axios.get(`${server}/api/Event/all`);
-
+      const { data } = await axios.get(`${server}/api/event/all`);
       setEvents(data.events);
     } catch (error) {
       console.log(error);
@@ -20,7 +19,7 @@ export const EventContextProvider = ({ children }) => {
 
   async function fetchEvent(id) {
     try {
-      const { data } = await axios.get(`${server}/api/Event/${id}`);
+      const { data } = await axios.get(`${server}/api/event/${id}`);
       setEvent(data.event);
     } catch (error) {
       console.log(error);
