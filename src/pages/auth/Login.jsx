@@ -15,7 +15,7 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-page">
+    <div className="auth-page h-screen bg-gradient-to-r from-[#1D2671] via-[#000] to-[#1D2671]">
       <div className="auth-form">
         <h2>Login</h2>
         <form onSubmit={submitHandler}>
@@ -34,13 +34,17 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-
-          <button disabled={btnLoading} type="submit" className="common-btn">
-            {btnLoading ? "Please Wait" : "Login"}
-          </button>
+          <div className="button ">
+            <button disabled={btnLoading} type="submit" className="common-btn">
+              {btnLoading ? "Please Wait" : "Login"}
+            </button>
+          </div>
         </form>
         <p>
-          Don't have an Account? <Link to="/register">Register</Link>
+          Don't have an Account?{" "}
+          <Link to="/register">
+            <span className="register">Register</span>
+          </Link>
         </p>
       </div>
     </div>

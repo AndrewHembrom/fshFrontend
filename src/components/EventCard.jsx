@@ -16,7 +16,7 @@ const EventCard = ({ event }) => {
       />
       <h3>{event.title}</h3>
       <p>Price - ₹{event.price}</p>
-      {/* {isAuth ? (
+      {isAuth ? (
         <>
           {user && user.role !== "admin" ? (
             <>
@@ -32,7 +32,8 @@ const EventCard = ({ event }) => {
               ) : (
                 <button
                   onClick={() => {
-                    navigate(`/event/${event._id}`);
+                    // navigate(`/event/${event._id}`);
+                    navigate(`/login`);
                   }}
                   className="common-btn"
                 >
@@ -60,7 +61,7 @@ const EventCard = ({ event }) => {
         >
           Register
         </button>
-      )} */}
+      )}
 
       {/* <br />
 

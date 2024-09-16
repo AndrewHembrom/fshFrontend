@@ -15,7 +15,7 @@ const Register = () => {
     await registerUser(name, email, password, navigate);
   };
   return (
-    <div className="auth-page">
+    <div className="auth-page h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
       <div className="auth-form">
         <h2>Register</h2>
         <form onSubmit={submitHandler}>
@@ -42,13 +42,17 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-
-          <button disabled={btnLoading} type="submit" className="common-btn">
-            {btnLoading ? "Please Wait" : "Register"}
-          </button>
+          <div className="button">
+            <button disabled={btnLoading} type="submit" className="common-btn">
+              {btnLoading ? "Please Wait" : "Register"}
+            </button>
+          </div>
         </form>
         <p>
-          Already have an account? <Link to="/login">Login</Link>
+          Already have an account?{" "}
+          <Link to="/login">
+            <span className="register">Login</span>
+          </Link>
         </p>
       </div>
     </div>

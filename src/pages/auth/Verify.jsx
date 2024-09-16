@@ -14,7 +14,7 @@ const Verify = () => {
   };
 
   return (
-    <div className="auth-page">
+    <div className="auth-page h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
       <div className="auth-form">
         <h2>Verify Account</h2>
         <form onSubmit={submitHandler}>
@@ -25,10 +25,11 @@ const Verify = () => {
             onChange={(e) => setOtp(e.target.value)}
             required
           />
-
-          <button disabled={btnLoading} type="submit" className="common-btn">
-            {btnLoading ? "Please Wait" : "Verify"}
-          </button>
+          <div className="button">
+            <button disabled={btnLoading} type="submit" className="common-btn">
+              {btnLoading ? "Please Wait" : "Verify"}
+            </button>
+          </div>
         </form>
         <p>
           Go to <Link to="/login">Login</Link> page
