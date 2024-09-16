@@ -15,12 +15,8 @@ const EventCard = ({ event }) => {
         className="w-[100px] h-[100px] object-cover rounded-md mb-[10px]"
       />
       <h3>{event.title}</h3>
-      <p>{event.description}</p>
-      <p>Venue - {event.venue}</p>
-      <p>Time - {event.time}</p>
-      <p>Members - {event.members}</p>
       <p>Price - ₹{event.price}</p>
-      {isAuth ? (
+      {/* {isAuth ? (
         <>
           {user && user.role !== "admin" ? (
             <>
@@ -64,15 +60,15 @@ const EventCard = ({ event }) => {
         >
           Register
         </button>
-      )}
+      )} */}
 
-      <br />
+      {/* <br />
 
       {user && user.role === "admin" && (
         <button className="common-btn" style={{ backgroundColor: "red" }}>
           Delete
         </button>
-      )}
+      )} */}
     </div>
   );
 };
