@@ -10,12 +10,14 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+        <div className="h-[100%] w-[100%] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
         <Appbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Events />} />
           <Route path="/store" element={<Merchandise />} />
         </Routes>
+        </div>
       </BrowserRouter>
     </div>
   );
