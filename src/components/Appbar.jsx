@@ -6,10 +6,13 @@ import { UserData } from "../context/UserContext";
 const Appbar = () => {
   const { isAuth } = UserData();
   return (
-    <div>
+    <div className="pt-[15px]">
       <div className="top-0 left-0 right-0 flex items-center justify-between px-4">
         <div className="bg-slate-800 p-4 rounded-full shadow-lg text-slate-50 flex items-center">
-          <img src = "src/assets/1607002743_VIT-New-white_new.png" width={110}></img>
+          <img
+            src="src/assets/1607002743_VIT-New-white_new.png"
+            width={110}
+          ></img>
         </div>
         <div className="flex-1 mx-4">
           <Navbar />

@@ -15,7 +15,7 @@ const Register = () => {
     await registerUser(name, email, password, navigate);
   };
   return (
-    <div className="auth-page h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+    <div className="auth-page h-screen bg-gradient-to-r from-[#1D2671] via-[#000] to-[#1D2671]">
       <div className="auth-form">
         <h2>Register</h2>
         <form onSubmit={submitHandler}>

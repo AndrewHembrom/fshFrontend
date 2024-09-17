@@ -15,13 +15,14 @@ import AdminCourses from "./admin/Courses/AdminCourses";
 import EventDescription from "./pages/eventdescription/EventDescription";
 import AdminDashbord from "./admin/Dashboard/AdminDashboard";
 import Loading from "./components/Loading/Loading";
+import MerchDescription from "./pages/merchdescription/MerchDescription";
 
 function App() {
   const { isAuth, user, loading } = UserData();
   return (
     <div>
       <BrowserRouter>
-        <div className="h-[100%] w-[100%] bg-gradient-to-r from-[#1D2671] via-[#000] to-[#1D2671]">
+        <div className="h-[100%] w-[100%] bg-gradient-to-r from-[#1D2671] via-[#000] to-[#1D2671] overflow-hidden pb-[50px]">
           <Appbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -52,6 +53,10 @@ function App() {
             <Route
               path="/event/registered/:id"
               element={isAuth ? <EventDescription user={user} /> : <Login />}
+            />
+            <Route
+              path="/merch/bought/:id"
+              element={isAuth ? <MerchDescription user={user} /> : <Login />}
             />
           </Routes>
         </div>

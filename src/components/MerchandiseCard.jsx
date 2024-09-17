@@ -20,20 +20,20 @@ const MerchandiseCard = ({ merch }) => {
         <>
           {user && user.role !== "admin" ? (
             <>
-              {user.subscription.includes(merch._id) ? (
+              {user.merch.includes(merch._id) ? (
                 <button
                   onClick={() => {
-                    navigate(`/merch/registered/${merch._id}`);
+                    navigate(`/merch/bought/${merch._id}`);
                   }}
                   className="common-btn"
                 >
-                  ALready Bought
+                  Purchased
                 </button>
               ) : (
                 <button
                   onClick={() => {
                     // navigate(`/merch/${merch._id}`);
-                    navigate(`/merch/registered/${merch._id}`);
+                    navigate(`/merch/bought/${merch._id}`);
                   }}
                   className="common-btn"
                 >
@@ -48,7 +48,7 @@ const MerchandiseCard = ({ merch }) => {
               }}
               className="common-btn"
             >
-              Already Bought
+              Purchased
             </button>
           )}
         </>

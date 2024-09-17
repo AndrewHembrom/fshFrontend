@@ -1,0 +1,55 @@
+.merch-description {
+  padding: 80px 0;
+  text-align: center;
+  min-height: 55vh;
+  height: 600px;
+
+  .merch-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    .merch-image {
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .merch-info {
+      text-align: left;
+
+      h2 {
+        font-size: 24px;
+        color: aliceblue;
+      }
+
+      p {
+        font-size: 14px;
+        color: aliceblue;
+        margin: 5px 0;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: aliceblue;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+}
+.description {
+  display: flex-inline;
+  width: 30%;
+  color: aliceblue;
+  margin-bottom: 20px;
+  border-radius: 10%;
+  border-bottom: 1px gray solid;
+  border-top: 1px gray solid;
+  margin-left: 35%;
+}
