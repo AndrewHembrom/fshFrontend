@@ -11,3 +11,22 @@
     margin-top: 40px;
   }
 }
+.main-content {
+  display: inline-flex;
+  margin-left: 300%;
+  justify-content: center;
+}
+.box {
+  background-color: #1e293b;
+  color: aliceblue;
+  padding-right: 50%;
+  padding-left: 50%;
+  text-align: center;
+  width: 100%;
+  width: max-content;
+  font-size: large;
+  margin: 10%;
+  border-radius: 25%;
+}
+.sidebar {
+}

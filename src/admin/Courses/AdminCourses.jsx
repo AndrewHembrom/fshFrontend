@@ -87,14 +87,17 @@ const AdminCourses = ({ user }) => {
     <Layout>
       <div className="admin-courses">
         <div className="left">
-          <h1>All Events</h1>
+          <div className="para">
+            <h1>All Events</h1>
+          </div>
+
           <div className="dashboard-content">
             {events && events.length > 0 ? (
               events.map((e) => {
                 return <EventCard key={e._id} event={e} />;
               })
             ) : (
-              <p>No Events Yet</p>
+              <p className="para">No Events Yet</p>
             )}
           </div>
         </div>
@@ -103,86 +106,6 @@ const AdminCourses = ({ user }) => {
           <div className="add-course">
             <div className="course-form">
               <h2>Add Event</h2>
-              {/* <form onSubmit={submitHandler}>
-                <label htmlFor="text">Title</label>
-                <input
-                  type="text"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  required
-                />
-
-                <label htmlFor="text">Description</label>
-                <input
-                  type="text"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  required
-                />
-
-                <label htmlFor="text">Price</label>
-                <input
-                  type="number"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                  required
-                />
-
-                <label htmlFor="text">createdBy</label>
-                <input
-                  type="text"
-                  value={createdBy}
-                  onChange={(e) => setCreatedBy(e.target.value)}
-                  required
-                />
-
-                <select
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                >
-                  <option value={""}>Select Category</option>
-                  {categories.map((e) => (
-                    <option value={e} key={e}>
-                      {e}
-                    </option>
-                  ))}
-                </select>
-
-                <label htmlFor="text">Time</label>
-                <input
-                  type="text"
-                  value={time}
-                  onChange={(e) => setTime(e.target.value)}
-                  required
-                />
-
-                <label htmlFor="text">Venue</label>
-                <input
-                  type="text"
-                  value={venue}
-                  onChange={(e) => setVenue(e.target.value)}
-                  required
-                />
-
-                <label htmlFor="text">Members</label>
-                <input
-                  type="text"
-                  value={members}
-                  onChange={(e) => setMembers(e.target.value)}
-                  required
-                />
-
-                <input type="file" required onChange={changeImageHandler} />
-                {imagePrev && <img src={imagePrev} alt="" width={300} />}
-
-                <button
-                  type="submit"
-                  disabled={btnLoading}
-                  className="common-btn"
-                >
-                  {btnLoading ? "Please Wait..." : "Add"}
-                </button>
-              </form> */}
               <form onSubmit={submitHandler}>
                 <label htmlFor="title">Title</label>
                 <input
@@ -269,14 +192,15 @@ const AdminCourses = ({ user }) => {
                   onChange={changeImageHandler}
                 />
                 {imagePrev && <img src={imagePrev} alt="" width={300} />}
-
-                <button
-                  type="submit"
-                  disabled={btnLoading}
-                  className="common-btn"
-                >
-                  {btnLoading ? "Please Wait..." : "Add"}
-                </button>
+                <div className="para">
+                  <button
+                    type="submit"
+                    disabled={btnLoading}
+                    className="common-btn"
+                  >
+                    {btnLoading ? "Please Wait..." : "Add"}
+                  </button>
+                </div>
               </form>
             </div>
           </div>
