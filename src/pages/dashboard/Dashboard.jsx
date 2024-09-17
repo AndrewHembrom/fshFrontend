@@ -8,7 +8,7 @@ const Dashbord = () => {
   console.log(myEvent);
   return (
     <div className="student-dashboard">
-      <h2>All Registered Events</h2>
+      <h2 className="heading">All Registered Events</h2>
       <div className="dashboard-content">
         {myEvent && myEvent.length > 0 ? (
           myEvent.map((e) => <EventCard key={e._id} event={e} />)
