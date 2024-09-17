@@ -20,17 +20,10 @@ const Home = () => {
 
   return (
     <div>
-<<<<<<< Updated upstream
       <div className="w-[100%] mx-[15%] pt-[5%] text-center">
         <img
           className="w-[70%] h-[60%] object-cover"
           src="src/assets/logo.png"
-=======
-      <div className="w-[100%] pt-[20%] text-center shadow-2xl ">
-        <img
-          className="w-full h-[400px] object-cover "
-          src="your-image-source1.jpg"
->>>>>>> Stashed changes
           alt="Carousel Image 1"
         />
       </div>
