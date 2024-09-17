@@ -4,6 +4,9 @@
   left: 0;
   color: white;
   border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+  border-radius: 15%;
 
   @media (max-width: 768px) {
     width: 30px;
@@ -23,7 +26,8 @@
       }
 
       &:hover {
-        background-color: gray;
+        background-color: #1e293b;
+        color: aliceblue;
       }
 
       a {

@@ -19,10 +19,10 @@ const Account = ({ user }) => {
     navigate("/login");
   };
   return (
-    <div>
+    <div className="h-screen">
       {user && (
         <div className="profile">
-          <h2>My Profile</h2>
+          <h2 className="profile-text">My Profile</h2>
           <div className="profile-info">
             <p>
               <strong>Name - {user.name}</strong>
@@ -31,37 +31,38 @@ const Account = ({ user }) => {
             <p>
               <strong>Email - {user.email}</strong>
             </p>
-
-            <button
-              onClick={() => navigate(`/${user._id}/dashboard`)}
-              className="common-btn"
-            >
-              <MdDashboard />
-              Dashboard
-            </button>
+            <div className="button pad">
+              <button
+                onClick={() => navigate(`/${user._id}/dashboard`)}
+                className="common-btn"
+              >
+                <span>Dashboard</span>
+              </button>
+            </div>
 
             <br />
 
             {user.role === "admin" && (
-              <button
-                onClick={() => navigate(`/admin/dashboard`)}
-                className="common-btn"
-              >
-                <MdDashboard />
-                Admin Dashboard
-              </button>
+              <div className="button">
+                <button
+                  onClick={() => navigate(`/admin/dashboard`)}
+                  className="common-btn"
+                >
+                  <span>Admin Dashboard</span>
+                </button>
+              </div>
             )}
 
             <br />
-
-            <button
-              onClick={logoutHandler}
-              className="common-btn"
-              style={{ background: "red" }}
-            >
-              <IoMdLogOut />
-              Logout
-            </button>
+            <div className="button pad1">
+              <button
+                onClick={logoutHandler}
+                className="common-btn"
+                style={{ background: "red" }}
+              >
+                <span>Logout</span>
+              </button>
+            </div>
           </div>
         </div>
       )}
