@@ -65,15 +65,16 @@ const EventDescription = ({ user }) => {
               </div>
 
               <p>{event.description}</p>
-
-              <p>Price - ₹{event.price}</p>
-              <p>Time: {event.time}</p>
-              <p>Venue: {event.venue}</p>
-              <p>Members: {event.members}</p>
+              <div className="description">
+                <p>Price - ₹{event.price}</p>
+                <p>Time: {event.time}</p>
+                <p>Venue: {event.venue}</p>
+                <p>Members: {event.members}</p>
+              </div>
 
               {user && user.subscription.includes(event._id) ? (
                 <button
-                  // onClick={() => navigate(`/event/study/${event._id}`)}
+                  // onClick={() => navigate(/event/study/${event._id})}
                   className="common-btn"
                 >
                   Registered
