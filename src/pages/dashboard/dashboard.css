@@ -12,3 +12,13 @@
     color: azure;
   }
 }
+.heading {
+  display: flex-inline;
+  width: 30%;
+  color: aliceblue;
+  margin-bottom: 20px;
+  border-radius: 15%;
+  border-bottom: 1px gray solid;
+  border-top: 1px gray solid;
+  margin-left: 35%;
+}
