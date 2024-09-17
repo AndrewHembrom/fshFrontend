@@ -3,9 +3,13 @@ import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { EventData } from "../../context/EventContext";
+import { server } from "../../main";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { events } = EventData();
+  console.log(events);
   const settings = {
     dots: true,
     infinite: true,
@@ -16,10 +20,17 @@ const Home = () => {
 
   return (
     <div>
+<<<<<<< Updated upstream
       <div className="w-[100%] mx-[15%] pt-[5%] text-center">
         <img
           className="w-[70%] h-[60%] object-cover"
           src="src/assets/logo.png"
+=======
+      <div className="w-[100%] pt-[20%] text-center shadow-2xl ">
+        <img
+          className="w-full h-[400px] object-cover "
+          src="your-image-source1.jpg"
+>>>>>>> Stashed changes
           alt="Carousel Image 1"
         />
       </div>
@@ -37,7 +48,20 @@ const Home = () => {
       {/* Carousel Section */}
       <div className="mt-8 mx-[25%]">
         <Slider {...settings}>
-          <div className="shadow-2xl">
+          {events && events.length > 0 ? (
+            events.map((event) => (
+              <div key={event._id} className="shadow-2xl">
+                <img
+                  className="w-full h-[400px] object-cover"
+                  src={`${server}/${event.image}`}
+                  alt={`Carousel Image for ${event.title}`}
+                />
+              </div>
+            ))
+          ) : (
+            <p>No Events Yet</p>
+          )}
+          {/* <div className="shadow-2xl">
             <img
               className="w-full h-[400px] object-cover "
               src="your-image-source1.jpg"
@@ -57,7 +81,7 @@ const Home = () => {
               src="your-image-source3.jpg"
               alt="Carousel Image 3"
             />
-          </div>
+          </div> */}
           {/* Add more slides as needed */}
         </Slider>
       </div>
